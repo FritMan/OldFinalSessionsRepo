@@ -1,0 +1,37 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaApplication10.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaApplication10.AnotherViews.MenuView"
+             x:DataType="vm:MainViewModel">
+    <Grid ColumnDefinitions="Auto, *, *" RowDefinitions="100, *">
+        <Label Content="Навигация" FontSize="20" HorizontalAlignment="Left"/>
+        <Label Content="ООО Торговые Автоматы" FontSize="24" Grid.Column="1" HorizontalAlignment="Left"/>
+        <Label Content="Главная" HorizontalAlignment="Right" Grid.Column="2"/>
+        
+        <StackPanel Orientation="Vertical" Grid.Row="1">
+            <Label Content="Главная" FontSize="20" HorizontalAlignment="Left"/>
+            <Label Content="Монитор ТА" FontSize="20" HorizontalAlignment="Left"/>
+            
+            <Expander Margin="10">
+                <Expander.Header>
+                    <Label Content="Детальные отчёты"/>
+                </Expander.Header>
+            </Expander>
+            
+            <Expander Margin="10">
+                <Expander.Header>
+                    <Label Content="Учёт ТМЦ"/>
+                </Expander.Header>
+            </Expander>
+            
+            <Expander Margin="10">
+                <Expander.Header>
+                    <Label Content="Администрирование"/>
+                </Expander.Header>
+            </Expander>
+        </StackPanel>
+    </Grid>
+</UserControl>

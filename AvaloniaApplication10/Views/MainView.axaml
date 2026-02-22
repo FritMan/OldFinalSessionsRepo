@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaApplication10.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaApplication10.Views.MainView"
+             x:DataType="vm:MainViewModel">
+    <Grid ColumnDefinitions="*, *, *" RowDefinitions="Auto, *">
+        
+        <Expander Name="UserExp" Grid.Column="2" IsVisible="False" HorizontalAlignment="Right" Margin="10">
+            <Expander.Header>
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="50" Height="50" Source="{Binding PhotoEdited}"/>
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="{Binding Fio}"/>
+                        <Label Content="{Binding Role.Name}"/>
+                    </StackPanel>
+                </StackPanel>
+            </Expander.Header>
+            
+            <StackPanel Orientation="Vertical">
+                <Label Content="Мой профиль"/>
+                <Label Content="Мои сессии"/>
+                <Label Content="Выход"/>
+            </StackPanel>
+        </Expander>
+
+        
+        
+        <ContentControl Name="MainFrame" Grid.ColumnSpan="3" Grid.Row="1"/>
+    </Grid>
+</UserControl>
