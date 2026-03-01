@@ -3,15 +3,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:AvaloniaApplication10.ViewModels"
+             xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApplication10.AnotherViews.MenuView"
              x:DataType="vm:MainViewModel">
-    <Grid ColumnDefinitions="Auto, *, *" RowDefinitions="100, *">
+    <Grid ColumnDefinitions="Auto, *, *" RowDefinitions="100, *, *">
         <Label Content="Навигация" FontSize="20" HorizontalAlignment="Left"/>
         <Label Content="ООО Торговые Автоматы" FontSize="24" Grid.Column="1" HorizontalAlignment="Left"/>
         <Label Content="Главная" HorizontalAlignment="Right" Grid.Column="2"/>
         
-        <StackPanel Orientation="Vertical" Grid.Row="1">
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.RowSpan="2">
             <Label Content="Главная" FontSize="20" HorizontalAlignment="Left"/>
             <Label Content="Монитор ТА" FontSize="20" HorizontalAlignment="Left"/>
             
@@ -32,6 +33,41 @@
                     <Label Content="Администрирование"/>
                 </Expander.Header>
             </Expander>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label Content="Эффективность сети"/>
+            <lvc:PieChart Name="EffectChart" Margin="5" 
+                          InitialRotation="-160"
+                          MaxAngle="140"
+                          MinValue="0"
+                          MaxValue="100"
+                          Height="200" Width="200">
+                <lvc:PieChart.VisualElements>
+
+                    <lvc:XamlNeedle Name="MainNeedle"
+                                    Width="10"/>
+
+                </lvc:PieChart.VisualElements>
+            </lvc:PieChart>
+            <Label  Name="EffLabel"/>
+
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.Row="1">
+            <Label Content="Состояние сети"/>
+            <lvc:PieChart Name="StateChart" Height="200" Width="200"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
+            <Label Content="Динамика продаж за последние 10 дней"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="По сумме"/>
+                <Button Content="По количеству"/>
+            </StackPanel>
+            <lvc:CartesianChart Name="SalesChart"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2">
+            <Label Content="Новости"/>
         </StackPanel>
     </Grid>
 </UserControl>

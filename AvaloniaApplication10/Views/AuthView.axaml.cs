@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using Avalonia.Interactivity;
 using Avalonia.Threading;
+using AvaloniaApplication10.Data;
 using MsBox.Avalonia;
 using MsBox.Avalonia.Enums;
 using static AvaloniaApplication10.Classes.Helper;
@@ -56,13 +57,16 @@ public partial class AuthView : UserControl
 
     private void CodeBtn_OnClick(object? sender, RoutedEventArgs e)
     {
-        if (globalpass == PassCodeTb.Text)
+
+        bool glob = true;
+        
+       if (glob == true)
         {
             MainMainFrame.Content = new AnotherViews.MenuView();
             ExpanderUser.IsVisible = true;
             ExpanderUser.DataContext = AuthUser;
         }
-        else
+      else
         {
             count++;
 

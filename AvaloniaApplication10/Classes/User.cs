@@ -16,7 +16,8 @@ public partial class User
             }
             else
             {
-                return File.ReadAllBytes("C:\\Users\\Ансар\\RiderProjects\\AvaloniaApplication10\\AvaloniaApplication10\\Assets\\0676db33732acc9f36eaf8f965176db3.jpg");
+                Photo = File.ReadAllBytes("C:\\Users\\Ансар\\RiderProjects\\AvaloniaApplication10\\AvaloniaApplication10\\Assets\\0676db33732acc9f36eaf8f965176db3.jpg");
+                return Photo;
             }
         }
     }
