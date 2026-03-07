@@ -3,7 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:AvaloniaApplication10.ViewModels"
-             xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
+            
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApplication10.AnotherViews.MenuView"
              x:DataType="vm:MainViewModel">
@@ -32,42 +32,17 @@
                 <Expander.Header>
                     <Label Content="Администрирование"/>
                 </Expander.Header>
+                
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Торговые автоматы" PointerPressed="InputElement_OnPointerPressed"/>
+                    <Label Content="Компании"/>
+                    <Label Content="Пользователи"/>
+                    <Label Content="Модемы"/>
+                    <Label Content="Дополнительное"/>
+                </StackPanel>
             </Expander>
         </StackPanel>
         
-        <StackPanel Grid.Row="1" Grid.Column="1">
-            <Label Content="Эффективность сети"/>
-            <lvc:PieChart Name="EffectChart" Margin="5" 
-                          InitialRotation="-160"
-                          MaxAngle="140"
-                          MinValue="0"
-                          MaxValue="100"
-                          Height="200" Width="200">
-                <lvc:PieChart.VisualElements>
-
-                    <lvc:XamlNeedle Name="MainNeedle"
-                                    Width="10"/>
-
-                </lvc:PieChart.VisualElements>
-            </lvc:PieChart>
-            <Label  Name="EffLabel"/>
-
-        </StackPanel>
-        <StackPanel Grid.Column="2" Grid.Row="1">
-            <Label Content="Состояние сети"/>
-            <lvc:PieChart Name="StateChart" Height="200" Width="200"/>
-        </StackPanel>
-        
-        <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
-            <Label Content="Динамика продаж за последние 10 дней"/>
-            <StackPanel Orientation="Horizontal">
-                <Button Content="По сумме"/>
-                <Button Content="По количеству"/>
-            </StackPanel>
-            <lvc:CartesianChart Name="SalesChart"/>
-        </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="2">
-            <Label Content="Новости"/>
-        </StackPanel>
-    </Grid>
+        <ContentControl Name="MenuFrame" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"/>
+        </Grid>
 </UserControl>

@@ -40,6 +40,8 @@ public partial class AuthView : UserControl
         
         
         string date = DateTime.Now.ToString("u");
+
+        date = date.Replace(" ", "T");
         
         string passdate = date + " - "  + pass;
         globalpass = pass;
